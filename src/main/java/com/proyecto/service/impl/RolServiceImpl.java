@@ -3,11 +3,13 @@ package com.proyecto.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyecto.dao.IRolDAO;
 import com.proyecto.model.Rol;
 import com.proyecto.service.IRolService;
 
+@Service
 public class RolServiceImpl implements IRolService {
 	@Autowired
 	private IRolDAO dao;

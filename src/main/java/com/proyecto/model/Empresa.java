@@ -30,13 +30,19 @@ public class Empresa {
 	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
 	@ManyToOne
 	private Usuario usuario;
+	@Column(name = "logo", nullable = true, length = 255)
+	private String logo;
+	@Column(name = "mision", nullable = true, length = 255)
+	private String mision;
+	@Column(name = "vision", nullable = true, length = 255)
+	private String vision;
 
 	public Empresa() {
 		super();
 	}
 
 	public Empresa(Long idEmpresa, String nombreempresa, String ruc, String telefono, String direccion,
-			Categoria categoria, Usuario usuario) {
+			Categoria categoria, Usuario usuario, String logo, String mision, String vision) {
 		super();
 		this.idEmpresa = idEmpresa;
 		this.nombreempresa = nombreempresa;
@@ -45,6 +51,33 @@ public class Empresa {
 		this.direccion = direccion;
 		this.categoria = categoria;
 		this.usuario = usuario;
+		this.logo = logo;
+		this.mision = mision;
+		this.vision = vision;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
+
+	public String getMision() {
+		return mision;
+	}
+
+	public void setMision(String mision) {
+		this.mision = mision;
+	}
+
+	public String getVision() {
+		return vision;
+	}
+
+	public void setVision(String vision) {
+		this.vision = vision;
 	}
 
 	public Long getIdEmpresa() {
@@ -106,7 +139,8 @@ public class Empresa {
 	@Override
 	public String toString() {
 		return "Empresa [idEmpresa=" + idEmpresa + ", nombreempresa=" + nombreempresa + ", ruc=" + ruc + ", telefono="
-				+ telefono + ", direccion=" + direccion + ", categoria=" + categoria + ", usuario=" + usuario;
+				+ telefono + ", direccion=" + direccion + ", categoria=" + categoria + ", usuario=" + usuario
+				+ ", logo=" + logo + ", mision=" + mision + ", vision=" + vision + "]";
 	}
 
 }

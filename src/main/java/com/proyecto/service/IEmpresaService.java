@@ -5,6 +5,7 @@ import java.util.List;
 import com.proyecto.model.Empresa;
 
 public interface IEmpresaService {
+	
 	Empresa insertar(Empresa item);
 
 	Empresa actualizar(Empresa item);
